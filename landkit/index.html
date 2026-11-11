@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./tailwind.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 55px;
+            height: 28px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            inset: 0;
+            background-color: #ccc;
+            border-radius: 30px;
+            transition: 0.4s;
+        }
+
+        .slider::before {
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        input :checked+.slider {
+            background-color: #2196f3;
+        }
+
+        input :checked+.slider::before {
+            transform: translateX(27px);
+        }
+
+        .text-container {
+            display: flex;
+            gap: 8px;
+            font-size: 30px;
+            font-weight: normal;
+        }
+
+        .changing-text {
+            height: 40px;
+            overflow: hidden;
+            color: #21f391;
+        }
+
+        .changing-text span {
+            display: block;
+            height: 40px;
+            animation: changetext 8s infinite;
+        }
+
+        @keyframes changing-text {
+
+            0%,
+            20% {
+                transform: translateY(-40px);
+            }
+
+            50%,
+            70% {
+                transform: translateY(-80px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="min-h-screen bg-[url('./assignment/image/wall.jpeg')] bg-center bg-cover px-28 py-5 relative  bg-black/55 ">
+        <nav class="flex items-center text-center justify-between animate__animated animate__slideInLeft">
+            <img src="./assignment/image/bee.jpeg" class="w-40 cursor-pointer">
+            <ul class=" text-white flex flex-row  px-2 ">
+                <li><a class="px-5" href="">Home</a></li>
+                <li><a class="px-5" href="">About</a></li>
+                <li><a class="px-5" href="">Features</a></li>
+                <li><a class="px-5" href="">Contacts</a></li>
+            </ul>
+            <img src="./assignment/image/lock.jpeg" class="w-8 cursor-pointer">
+        </nav>
+
+
+
+        <div class="text-white mt-48 max-w-lg animate__animated animate__slideInLeft animate__delay-2s	 ">
+            <h1 class="text-6xl font-semibold leading-normal">Grocieries <br>delivery in <span class="font-light"> 15
+                    mins</span> </h1>
+            <p>Grocify offer a wide range of products, including fresh products, meats, dairy, baked goods and
+                non-perishable items.</p>
+
+            <div class="mt-10">
+                <a class="bg-yellow-400 rounded-3xl py-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:border-yellow-400 hover:text-white duration-300 hover:border border-transparent"
+                    href="">Order Now</a>
+                <a href="">Download App <span class="text-lg inline-block rotate-90">&#10148</span></a>
+            </div>
+
+            <div>
+                <img src="./assignment/image/grocery-image.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
